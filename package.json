@@ -12,7 +12,8 @@
     "@oclif/config": "^1.17.0",
     "@oclif/plugin-help": "^3.2.1",
     "chalk": "^4.1.0",
-    "cli-ux": "^5.5.1"
+    "cli-ux": "^5.5.1",
+    "ora": "^5.2.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",
