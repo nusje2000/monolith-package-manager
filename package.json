@@ -1,0 +1,58 @@
+{
+  "name": "mpm",
+  "description": "A monolithic repo package manager for NPM",
+  "version": "0.0.0",
+  "author": "Alex van den Oudenhoven @Lexouden",
+  "bin": {
+    "mpm": "./bin/run"
+  },
+  "bugs": "https://github.com/Lexouden/monolithic-package-manager/issues",
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/plugin-help": "^3.2.1",
+    "chalk": "^4.1.0",
+    "cli-ux": "^5.5.1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.26.0",
+    "@oclif/test": "^1.2.8",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "globby": "^10.0.2",
+    "mocha": "^5.2.0",
+    "nyc": "^14.1.1",
+    "oclif": "^1.16.1",
+    "rimraf": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/Lexouden/monolithic-package-manager",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "mpm",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "Lexouden/monolithic-package-manager",
+  "scripts": {
+    "postpack": "rimraf oclif.manifest.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
